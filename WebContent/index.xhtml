@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:p="http://primefaces.org/ui"
+	>
+	
+<h:head>
+	<title>Egar Test Task</title>
+</h:head>
+
+<h:body>
+<h2>Customers + Orders Table</h2>
+<p:dataTable var="orders" tableStyle="width:auto" value="#{extendedOrderController.extOrders}">
+    <p:column headerText="id">
+        <h:outputText value="#{orders.id}"/>
+    </p:column>
+
+    <p:column headerText="Name">
+        <h:outputText value="#{orders.customerName}"/>
+    </p:column>
+
+    <p:column headerText="Address">
+        <h:outputText value="#{orders.customerAddress}"/>
+    </p:column>
+
+    <p:column headerText="Amount">
+        <h:outputText value="#{orders.orderAmount}"/>
+    </p:column>
+    
+    <p:column headerText="Order Date">
+    	<h:outputText value="#{orders.orderDate}"/>
+    </p:column>
+    
+     <p:column headerText="Staff S/N">
+    	<h:outputText value="#{orders.serialNumber}"/>
+    </p:column>
+    
+     <p:column headerText="Staff quantity">
+    	<h:outputText value="#{orders.quantity}"/>
+    </p:column>
+    
+</p:dataTable>
+<h2>Item Descriptions</h2>
+<p:dataTable var="desc" tableStyle="width:auto" value="#{itemDescriptionController.itemDescs}">
+    <p:column headerText="Serial Number">
+        <h:outputText value="#{desc.serialNumber}"/>
+    </p:column>
+
+    <p:column headerText="Item Name">
+        <h:outputText value="#{desc.itemName}"/>
+    </p:column>
+
+    <p:column headerText="Description">
+        <h:outputText value="#{desc.itemDesc}"/>
+    </p:column>
+
+    <p:column headerText="Made On">
+        <h:outputText value="#{desc.itemMadeOn}"/>
+    </p:column>
+</p:dataTable>
+</h:body>
+</html>
